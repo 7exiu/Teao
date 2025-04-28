@@ -1,0 +1,15 @@
+components:
+- components:
+  - name: repeating_panel_1
+    properties: {item_template: Pages.Session.Customer.Dashboard.DataGrid.UserData}
+    type: RepeatingPanel
+  layout_properties: {grid_position: 'QFICDD,AVYXCD'}
+  name: data_grid_1
+  properties:
+    columns:
+    - {data_key: column_1, id: JKSDUP, title: All Users}
+    - {data_key: firstname, id: VJQQOR, title: User Firstname}
+    - {data_key: column_3, id: OJLQEN, title: User Lastname}
+  type: DataGrid
+container: {type: ColumnPanel}
+is_package: true
