@@ -31,8 +31,6 @@ unique_ids:
     Pages.Session.Customer.Cart: '1744395927988337302771335.7637'
     Pages.Session.Customer.Cart.ItemTemplate1: '1744492524126484928362194.5227'
     Pages.Session.Customer.Dashboard: '1744551330502969883513483.5891'
-    Pages.Session.Customer.Dashboard.DataGrid: '1745827689906932738271659.413'
-    Pages.Session.Customer.Dashboard.DataGrid.UserData: '1745827758183505280383232.0537'
     Pages.Session.Customer.Dashboard.Profile: '1744971154584618721414447.5913'
     Pages.Session.Customer.Dashboard.Profile.InfoCard: '1744972280385418635946892.3032'
     Pages.Session.Customer.Orders: '1744395946048973489595426.2286'

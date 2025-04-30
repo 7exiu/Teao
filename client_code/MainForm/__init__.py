@@ -15,6 +15,7 @@ from ..Pages.NoSession.Products.Teas import Teas
 from ..Pages.NoSession.Products.Goodies import Goodies
 from ..Pages.NoSession.Auth.SignUpForm import SignUpForm
 from ..Pages.NoSession.Auth.LogInForm import LogInForm
+from ..Pages.Session.Customer.Cart import Cart
 from ..Pages.Session.Customer.Dashboard import Dashboard
 from ..Pages.NoSession.Products.Tables import Tables
 
@@ -23,12 +24,7 @@ class MainForm(MainFormTemplate):
   def __init__(self, **properties):
     self.init_components(**properties)
     self.load_page("landing")
-    #anvil.server.call('access_fastapi_api')
-    #print(anvil.server.call('nympy_test'))
-    # [942276,2704978984]
-    
-    
-      
+
   def load_page(self, page_name):
     self.content_panel.clear()
     if page_name == "landing":
@@ -53,14 +49,14 @@ class MainForm(MainFormTemplate):
       login_form = LogInForm()
       login_form.role = "custom-wide"
       self.content_panel.add_component(login_form)
-    elif page_name == "dashboard":
-      self.content_panel.add_component(Dashboard())
+    elif page_name == "cart":
+      self.content_panel.add_component(Cart())
     elif page_name == "tables":
       self.content_panel.add_component(Tables())
+    elif page_name == "dashboard":
+      self.content_panel.add_component(Dashboard())
+     
 
-
-  
-  
   def terms_of_service_button_click(self, **event_args):
     """This method is called when the button is clicked"""
     get_open_form().load_page("terms")
@@ -95,9 +91,9 @@ class MainForm(MainFormTemplate):
   def login_link_click(self, **event_args):
      get_open_form().load_page("login")
 
-  def tables_link_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    get_open_form().load_page('tables')
+  def button_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    get_open_form().load_page("cart")
     pass
   
 

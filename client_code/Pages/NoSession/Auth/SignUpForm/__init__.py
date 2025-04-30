@@ -20,8 +20,7 @@ class SignUpForm(SignUpFormTemplate):
     password = self.credentials_fields.password_field.text
     confirmed_password = self.confirmed_password_field.text 
     photo = self.photo_loader.file
-
-    if not firstname or not lastname or not email or not password or not confirmed_password or not file: 
+    if not firstname or not lastname or not email or not password or not confirmed_password:
       Notification("Every field must be filled", style="danger").show()
       return
 
@@ -30,7 +29,6 @@ class SignUpForm(SignUpFormTemplate):
       return  
 
     try:
-      response = anvil.server.call('add_user', firstname, lastname, email, password, photo)
       Notification(response, style="success").show()
 
       self.name_fields.firstname_field.text = ""
@@ -39,13 +37,9 @@ class SignUpForm(SignUpFormTemplate):
       self.credentials_fields.password_field.text = ""
       self.confirmed_password_field.text = ""
       self.photo_loader.clear()
+
+      
       get_open_form().load_page("login")
 
     except Exception as e:
       Notification(f"Error while communicating with the server: {e}", style="danger").show()
-
-  def photo_loader_change(self, file, **event_args):
-    """This method is called when a new file is loaded into this FileLoader"""
-    print(" ✅  file url", file.get_url())
-    print(" ✅  file.content_type:", file.content_type)
-    print(" ✅  file.name:", file.name)

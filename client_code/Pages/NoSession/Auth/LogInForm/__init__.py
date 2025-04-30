@@ -13,7 +13,7 @@ class LogInForm(LogInFormTemplate):
     #state.register(self.on_state_change)
     #self.on_state_change()
     self.form_buttons.submit_button.add_event_handler('click', self.on_submit_click)
-
+    
   def on_submit_click(self, **event_args):
     print("✅---------------------------------------")
     email = self.credentials_fields.email_field.text
