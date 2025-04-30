@@ -2,9 +2,8 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
-import numpy
 
-# This is a server package. It runs on the Anvil server,
+# This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 #
 # To allow anvil.server.call() to call functions here, we mark
@@ -16,8 +15,6 @@ import numpy
 #   print("Hello, " + name + "!")
 #   return 42
 #
-
 @anvil.server.callable
-def nympy_test():
-  return numpy.array([[1., 0., 0.],
- [0., 1., 2.]])
+def get_clients():
+  return list(app_tables.users.search())

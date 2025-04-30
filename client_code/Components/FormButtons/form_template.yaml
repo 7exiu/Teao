@@ -1,5 +1,5 @@
 components:
-- event_bindings: {}
+- event_bindings: {click: submit_button_click}
   layout_properties: {grid_position: 'UPBCHT,FOGBJS'}
   name: submit_button
   properties: {bold: true, icon: 'fa:send', text: SUBMIT}
@@ -7,6 +7,26 @@ components:
 - layout_properties: {grid_position: 'UPBCHT,WRGHDG'}
   name: reset_button
   properties: {bold: true, icon: '', text: RESET}
+  type: Button
+- layout_properties: {grid_position: 'TMSVBO,MJYXXZ'}
+  name: login_button
+  properties:
+    text: Se connecter
+    icon: fa:sign-in
+    background: '#dbbeb4'
+    foreground: '#ffffff'
+    bold: true
+    visible: true
+  type: Button
+- layout_properties: {grid_position: 'AELHWM,NPIPCI'}
+  name: dashboard_button
+  properties:
+    text: Accéder au Dashboard
+    icon: fa:home
+    background: '#dbbeb4'
+    foreground: '#ffffff'
+    bold: true
+    visible: false
   type: Button
 container: {type: ColumnPanel}
 custom_component: true

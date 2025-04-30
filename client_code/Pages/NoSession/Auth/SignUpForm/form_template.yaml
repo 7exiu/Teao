@@ -8,14 +8,19 @@ components:
     name: credentials_fields
     properties: {}
     type: form:Components.CredentialsFields
-  - layout_properties: {grid_position: 'XQESBX,SHCTVG'}
+  - layout_properties: {grid_position: 'FDVPXJ,IGWLEP'}
     name: confirmed_password_field
-    properties: {background: 'theme:My Primary Color', foreground: 'theme:On Surface', placeholder: Confirm the password}
+    properties: {background: 'theme:My Primary Color', foreground: 'theme:On Surface', placeholder: Confirmer le mot de passe}
     type: TextBox
-  - event_bindings: {change: photo_loader_change}
-    layout_properties: {grid_position: 'QGJCRO,DYLPTX'}
-    name: photo_loader
-    properties: {}
+  - layout_properties: {grid_position: 'FDVPXJ,IGWLEP'}
+    name: password_strength
+    properties: {font_size: 12, text_align: center}
+    type: Label
+  - data_bindings: []
+    event_bindings: {}
+    layout_properties: {grid_position: 'SDIBKI,CSTPJD'}
+    name: file_loader_1
+    properties: {align: center, enabled: true, file_types: '', icon_align: left_edge}
     type: FileLoader
   - layout_properties: {grid_position: 'FLOQNV,IZJPSS'}
     name: sign_up_form_buttons

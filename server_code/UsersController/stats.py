@@ -15,7 +15,6 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
-
 @anvil.server.callable
 def set_user_generated_incom():
   pass

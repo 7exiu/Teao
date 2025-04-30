@@ -2,13 +2,16 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+# This is a package.
+# You can define variables and functions here, and use them from any form. For example, in a top-level form:
+#
+#    from .. import Package1
 
 
 class SharedStateManager:
     def __init__(self):
         self._state = {
-          "user_id": "",
-          "user_email": "",
+          "user": "Boris A",
           "cart": []
         }
         self._listeners = []
@@ -30,6 +33,13 @@ class SharedStateManager:
     def unregister(self, callback):
         self._listeners.remove(callback)
 
+    """Cart Management"""
 
- 
+    def add_to_cart(self, item):
+        self._state["cart"].append(item)
+        self._notify()
+
+    def get_cart(self):
+        return self._state["cart"]
+
 state = SharedStateManager()

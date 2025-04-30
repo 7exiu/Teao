@@ -3,7 +3,7 @@ import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
 
-# This is a server package. It runs on the Anvil server,
+# This is a server module. It runs on the Anvil server,
 # rather than in the user's browser.
 #
 # To allow anvil.server.call() to call functions here, we mark
@@ -15,3 +15,5 @@ import anvil.server
 #   print("Hello, " + name + "!")
 #   return 42
 #
+def get_products():
+  return list(app_tables.teas.search(), app_tables.tables.search(), app_tables.goodies()) 

@@ -23,11 +23,29 @@ db_schema:
     - admin_ui: {order: 4.5, width: 200}
       name: is_confirmed
       type: bool
-    - admin_ui: {order: 0, width: 200}
-      name: user_id
-      type: string
     server: full
     title: bookings
+  card:
+    client: none
+    columns:
+    - admin_ui: {width: 200}
+      name: Id_commande
+      type: number
+    - admin_ui: {width: 200}
+      name: nombre_produits
+      type: number
+    - admin_ui: {order: 0.5, width: 200}
+      name: ID_Produits
+      type: number
+    - admin_ui: {order: 3, width: 200}
+      name: prix_u
+      type: number
+    - admin_ui: {order: 4, width: 200}
+      name: tables
+      target: tables
+      type: link_multiple
+    server: full
+    title: card
   carts:
     client: none
     columns:
@@ -146,6 +164,9 @@ db_schema:
     - admin_ui: {order: 5, width: 200}
       name: is_available
       type: bool
+    - admin_ui: {order: 0, width: 200}
+      name: ID
+      type: number
     server: full
     title: teas
   teas_stats:
@@ -168,6 +189,32 @@ db_schema:
       type: date
     server: full
     title: teas_stats
+  temp:
+    client: none
+    columns:
+    - admin_ui: {order: 2, width: 200}
+      name: name
+      type: string
+    - admin_ui: {order: 3, width: 200}
+      name: price
+      type: number
+    - admin_ui: {order: 4, width: 200}
+      name: image
+      type: media
+    - admin_ui: {order: 5, width: 200}
+      name: description
+      type: string
+    - admin_ui: {order: 6, width: 200}
+      name: time
+      type: datetime
+    - admin_ui: {order: 9, width: 200}
+      name: is_available
+      type: bool
+    - admin_ui: {order: 10, width: 200}
+      name: reserved_by
+      type: string
+    server: full
+    title: temp
   users:
     client: none
     columns:
@@ -195,6 +242,9 @@ db_schema:
     - admin_ui: {order: 4.5, width: 200}
       name: is_admin
       type: bool
+    - admin_ui: {order: 0, width: 200}
+      name: id
+      type: number
     server: full
     title: users
   users_stats:
@@ -228,7 +278,7 @@ dependencies:
   resolution_hints: {app_id: C6ZZPAPN4YYF5NVJ, name: Anvil Extras, package_name: anvil_extras}
   version: {version_tag: v3.1.0}
 metadata: {description: An app for those who like tea, logo_img: 'asset:logo-tearoom-simple-logo.png', title: TeaRoom}
-name: Clone of TeaRoom (5)
+name: Finaltest
 native_deps: {head_html: ''}
 package_name: TeaRoomApp
 renamed: true
@@ -241,5 +291,5 @@ services:
 - client_config: {}
   server_config: {}
   source: /runtime/services/tables.yml
-startup: {module: Components.AddToCartButton, type: form}
+startup: {module: MainForm, type: form}
 startup_form: null

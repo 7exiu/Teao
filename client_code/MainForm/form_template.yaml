@@ -5,11 +5,11 @@ components:
     name: landing_link
     properties: {bold: true, font_size: null, text: TEA ROOM}
     type: Link
-  - event_bindings: {click: tables_link_click}
+  - event_bindings: {click: button_1_click}
     layout_properties: {}
-    name: tables_link
-    properties: {bold: true, font: cambria, font_size: 15, icon: 'fa:university', text: TABLES}
-    type: Link
+    name: button_1
+    properties: {text: Panier}
+    type: Button
   - event_bindings: {click: teas_link_click}
     layout_properties: {}
     name: teas_link
